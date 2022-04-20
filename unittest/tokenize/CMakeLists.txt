@@ -1,0 +1,17 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.1)
+PROJECT(tokenize_test)
+
+INCLUDE_DIRECTORIES(
+  ${CMAKE_CURRENT_SOURCE_DIR}/../../
+  )
+
+SET(SRC
+  ${CMAKE_CURRENT_SOURCE_DIR}/../../tokenize.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/test.cpp
+  )
+
+ADD_EXECUTABLE(${PROJECT_NAME} ${SRC})
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} gtest_main)
+
+include (GoogleTest)
+gtest_discover_tests(${PROJECT_NAME})

@@ -1,0 +1,7 @@
+*~
+*.o
+a.out
+9cc
+build/
+.vscode/
+/core

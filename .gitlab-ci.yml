@@ -1,0 +1,19 @@
+image: rikorose/gcc-cmake:latest
+
+stages:
+  - build
+  - test
+
+default:
+  before_script:
+    - cmake -S . -B build && cd build && make
+
+build_job:
+  stage: build
+  script:
+    - echo "done default"
+
+test_job:
+  stage: test
+  script:
+    - ctest && cd .. && ./test.sh
